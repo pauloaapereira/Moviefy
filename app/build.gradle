@@ -1,8 +1,8 @@
-import com.pp.ppcompose.buildsrc.Compose
-import com.pp.ppcompose.buildsrc.Configs
-import com.pp.ppcompose.buildsrc.Core
-import com.pp.ppcompose.buildsrc.Libs
-import com.pp.ppcompose.buildsrc.Tests
+import com.pp.moviefy.buildsrc.Compose
+import com.pp.moviefy.buildsrc.Configs
+import com.pp.moviefy.buildsrc.Core
+import com.pp.moviefy.buildsrc.Libs
+import com.pp.moviefy.buildsrc.Tests
 
 plugins {
     id 'com.android.application'
@@ -15,7 +15,7 @@ android {
     compileSdkVersion Configs.CompileSdkVersion
 
     defaultConfig {
-        applicationId "com.pp.ppcompose"
+        applicationId "com.pp.moviefy"
         minSdkVersion Configs.MinSdkVersion
         targetSdkVersion Configs.TargetSdkVersion
         versionCode Configs.VersionCode

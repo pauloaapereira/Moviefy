@@ -1,4 +1,4 @@
-package com.pp.ppcompose.buildsrc
+package com.pp.moviefy.buildsrc
 
 object Configs {
     const val CompileSdkVersion = 30

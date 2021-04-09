@@ -1,7 +1,7 @@
-import com.pp.ppcompose.buildsrc.Compose
-import com.pp.ppcompose.buildsrc.Core
-import com.pp.ppcompose.buildsrc.Configs
-import com.pp.ppcompose.buildsrc.Libs
+import com.pp.moviefy.buildsrc.Compose
+import com.pp.moviefy.buildsrc.Core
+import com.pp.moviefy.buildsrc.Configs
+import com.pp.moviefy.buildsrc.Libs
 
 plugins {
     id 'com.android.library'

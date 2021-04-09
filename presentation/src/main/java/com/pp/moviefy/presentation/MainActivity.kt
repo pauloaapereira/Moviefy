@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.ppcompose.presentation
+package com.pp.moviefy.presentation
 
 import android.os.Bundle
 import androidx.activity.compose.setContent

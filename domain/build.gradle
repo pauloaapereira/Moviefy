@@ -1,6 +1,6 @@
-import com.pp.ppcompose.buildsrc.Configs
-import com.pp.ppcompose.buildsrc.Libs
-import com.pp.ppcompose.buildsrc.Tests
+import com.pp.moviefy.buildsrc.Configs
+import com.pp.moviefy.buildsrc.Libs
+import com.pp.moviefy.buildsrc.Tests
 
 plugins {
     id 'com.android.library'
