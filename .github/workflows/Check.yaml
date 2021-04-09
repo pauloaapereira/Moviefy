@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      SECRET_PROPERTIES : ${{ secrets.SECRET_PROPERTIES }}
 
     steps:
       - name: Checkout
@@ -21,6 +23,12 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+
+      - name: Write secrets.properties
+        run: |
+          touch secrets.properties
+          echo $SECRET_PROPERTIES >> secrets.properties
+          cat  secrets.properties
 
       - name: Build project
         run: ./gradlew spotlessCheck assembleDebug lintDebug --stacktrace
