@@ -13,18 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.common.model
+package com.pp.moviefy.data.remote.common.model
+
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkError(
-    @Json(name = "error_message")
-    val errorMessage: String?,
-    @Json(name = "status_code")
-    val statusCode: Int?,
-    @Json(name = "status_message")
-    val statusMessage: String?,
-    @Json(name = "success")
-    val success: Boolean?
+data class AccountRating(
+    @Json(name = "created_at")
+    val createdAt: String?,
+    @Json(name = "value")
+    val value: Int?
 )

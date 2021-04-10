@@ -15,7 +15,7 @@
  */
 package com.pp.moviefy.data.remote.v4.common.model
 
-import com.pp.moviefy.data.remote.v4.account.model.NetworkMovie
+import com.pp.moviefy.data.remote.common.model.NetworkMovie
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

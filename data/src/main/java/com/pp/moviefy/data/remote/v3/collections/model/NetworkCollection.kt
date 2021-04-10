@@ -13,39 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.account.model
+package com.pp.moviefy.data.remote.v3.collections.model
 
+import com.pp.moviefy.data.remote.common.model.NetworkMovie
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkTvShow(
-    @Json(name = "account_rating")
-    val accountRating: AccountRating?,
+data class NetworkCollection(
     @Json(name = "backdrop_path")
-    val backdropPath: Any?,
-    @Json(name = "first_air_date")
-    val firstAirDate: String?,
-    @Json(name = "genre_ids")
-    val genreIds: List<Int>?,
+    val backdropPath: String?,
     @Json(name = "id")
     val id: Int?,
     @Json(name = "name")
     val name: String?,
-    @Json(name = "origin_country")
-    val originCountry: List<String>?,
-    @Json(name = "original_language")
-    val originalLanguage: String?,
-    @Json(name = "original_name")
-    val originalName: String?,
     @Json(name = "overview")
     val overview: String?,
-    @Json(name = "popularity")
-    val popularity: Double?,
+    @Json(name = "parts")
+    val parts: List<NetworkMovie>?,
     @Json(name = "poster_path")
-    val posterPath: String?,
-    @Json(name = "vote_average")
-    val voteAverage: Double?,
-    @Json(name = "vote_count")
-    val voteCount: Int?
+    val posterPath: String?
 )

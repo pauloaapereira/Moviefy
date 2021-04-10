@@ -15,9 +15,9 @@
  */
 package com.pp.moviefy.data.remote.v4.account.api
 
-import com.pp.moviefy.data.remote.v4.account.model.NetworkMovie
-import com.pp.moviefy.data.remote.v4.account.model.NetworkPagedResponse
-import com.pp.moviefy.data.remote.v4.account.model.NetworkTvShow
+import com.pp.moviefy.data.remote.common.model.NetworkMovie
+import com.pp.moviefy.data.remote.common.model.NetworkPagedResponse
+import com.pp.moviefy.data.remote.common.model.NetworkTvShow
 import com.pp.moviefy.data.remote.v4.common.model.NetworkList
 import retrofit2.http.GET
 import retrofit2.http.Path

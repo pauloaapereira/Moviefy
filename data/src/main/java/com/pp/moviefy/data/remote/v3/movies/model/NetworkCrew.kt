@@ -13,15 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.account.model
+package com.pp.moviefy.data.remote.v3.movies.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class AccountRating(
-    @Json(name = "created_at")
-    val createdAt: String?,
-    @Json(name = "value")
-    val value: Int?
+data class NetworkCrew(
+    @Json(name = "adult")
+    val adult: Boolean?,
+    @Json(name = "credit_id")
+    val creditId: String?,
+    @Json(name = "department")
+    val department: String?,
+    @Json(name = "gender")
+    val gender: Int?,
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "job")
+    val job: String?,
+    @Json(name = "known_for_department")
+    val knownForDepartment: String?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "original_name")
+    val originalName: String?,
+    @Json(name = "popularity")
+    val popularity: Double?,
+    @Json(name = "profile_path")
+    val profilePath: String?
 )

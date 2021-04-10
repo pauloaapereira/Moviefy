@@ -13,19 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.account.model
+package com.pp.moviefy.data.remote.v3.certifications.api
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
+import retrofit2.http.GET
 
-@JsonClass(generateAdapter = true)
-data class NetworkPagedResponse <T>(
-    @Json(name = "page")
-    val page: Int?,
-    @Json(name = "total_pages")
-    val totalPages: Int?,
-    @Json(name = "results")
-    val results: List<T>?,
-    @Json(name = "total_results")
-    val totalResults: Int?
-)
+interface CertificationsDao {
+
+    @GET(value = "movie/list")
+    fun getMovieCertifications(): NetworkMovieOrTvCertifications
+
+    @GET(value = "tv/list")
+    fun getTvCertifications(): NetworkMovieOrTvCertifications
+}

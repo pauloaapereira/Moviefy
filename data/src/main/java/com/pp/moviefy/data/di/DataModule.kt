@@ -16,9 +16,6 @@
 package com.pp.moviefy.data.di
 
 import com.pp.moviefy.data.ApiConstants
-import com.pp.moviefy.data.remote.v4.account.api.AccountDao
-import com.pp.moviefy.data.remote.v4.auth.api.AuthDao
-import com.pp.moviefy.data.remote.v4.lists.api.ListsDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -58,20 +55,5 @@ object DataModule {
             .baseUrl(ApiConstants.V4_BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
-    }
-
-    @Provides
-    fun provideAuthDao(@Named("v4Retrofit") retrofit: Retrofit): AuthDao {
-        return retrofit.create(AuthDao::class.java)
-    }
-
-    @Provides
-    fun provideAccountDao(@Named("v4Retrofit") retrofit: Retrofit): AccountDao {
-        return retrofit.create(AccountDao::class.java)
-    }
-
-    @Provides
-    fun provideListsDao(@Named("v4Retrofit") retrofit: Retrofit): ListsDao {
-        return retrofit.create(ListsDao::class.java)
     }
 }
