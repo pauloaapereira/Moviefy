@@ -82,4 +82,10 @@ object Libs {
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
     }
 
+    object Retrofit {
+        private const val version = "2.9.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$version"
+        const val retrofitConverter =  "com.squareup.retrofit2:converter-moshi:$version"
+    }
+
 }

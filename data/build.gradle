@@ -35,8 +35,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField("String", "TMDB_V3_KEY", getProperty("secrets.properties", "TMDB_API_KEY"))
-        buildConfigField("String", "TMDB_V4_TOKEN", getProperty("secrets.properties", "TMDB_ACCESS_TOKEN"))
+        buildConfigField("String", "TMDB_V3_KEY", "\"${getProperty("secrets.properties", "TMDB_API_KEY")}\"")
+        buildConfigField("String", "TMDB_V4_TOKEN", "\"${getProperty("secrets.properties", "TMDB_ACCESS_TOKEN")}\"")
     }
 
     compileOptions {
@@ -62,5 +62,8 @@ dependencies {
     implementation Libs.Hilt.library
     kapt Libs.Hilt.googleAndroidCompiler
     kapt Libs.Hilt.googleCompiler
+
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.retrofitConverter
 
 }
