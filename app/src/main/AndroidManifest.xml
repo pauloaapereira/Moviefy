@@ -14,7 +14,7 @@
     package="com.pp.moviefy">
 
     <application
-        android:name="com.pp.moviefy.app.PPComposeApp"
+        android:name="com.pp.moviefy.app.MoviefyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
