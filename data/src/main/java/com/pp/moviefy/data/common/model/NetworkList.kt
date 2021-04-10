@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.account.model
+package com.pp.moviefy.data.common.model
 
+import com.pp.moviefy.data.account.model.NetworkMovie
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -26,8 +27,12 @@ data class NetworkList(
     val averageRating: Double?,
     @Json(name = "backdrop_path")
     val backdropPath: String?,
+    @Json(name = "comments")
+    val comments: Any?,
     @Json(name = "created_at")
     val createdAt: String?,
+    @Json(name = "created_by")
+    val createdBy: CreatedBy?,
     @Json(name = "description")
     val description: String?,
     @Json(name = "featured")
@@ -42,10 +47,16 @@ data class NetworkList(
     val name: String?,
     @Json(name = "number_of_items")
     val numberOfItems: Int?,
+    @Json(name = "object_ids")
+    val objectIds: Any?,
+    @Json(name = "page")
+    val page: Int?,
     @Json(name = "poster_path")
     val posterPath: String?,
     @Json(name = "public")
     val isPublic: Int?,
+    @Json(name = "results")
+    val results: List<NetworkMovie>?,
     @Json(name = "revenue")
     val revenue: String?,
     @Json(name = "runtime")
@@ -54,4 +65,14 @@ data class NetworkList(
     val sortBy: Int?,
     @Json(name = "updated_at")
     val updatedAt: String?
+)
+
+@JsonClass(generateAdapter = true)
+data class CreatedBy(
+    @Json(name = "gravatar_hash")
+    val gravatarHash: String?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "username")
+    val username: String?
 )

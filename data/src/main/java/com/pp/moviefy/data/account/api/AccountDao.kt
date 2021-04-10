@@ -15,57 +15,57 @@
  */
 package com.pp.moviefy.data.account.api
 
-import com.pp.moviefy.data.account.model.NetworkList
 import com.pp.moviefy.data.account.model.NetworkMovie
 import com.pp.moviefy.data.account.model.NetworkPagedResponse
 import com.pp.moviefy.data.account.model.NetworkTvShow
+import com.pp.moviefy.data.common.model.NetworkList
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface AccountDao {
 
     @GET(value = "{account_id}/lists")
-    fun getLists(
+    suspend fun getLists(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkList>
 
     @GET(value = "{account_id}/movie/favorites")
-    fun getFavoriteMovies(
+    suspend fun getFavoriteMovies(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkMovie>
 
     @GET(value = "{account_id}/tv/favorites")
-    fun getFavoriteTvShows(
+    suspend fun getFavoriteTvShows(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkTvShow>
 
     @GET(value = "{account_id}/movie/recommendations")
-    fun getRecommendedMovies(
+    suspend fun getRecommendedMovies(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkMovie>
 
     @GET(value = "{account_id}/tv/recommendations")
-    fun getRecommendedTvShows(
+    suspend fun getRecommendedTvShows(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkTvShow>
 
     @GET(value = "{account_id}/movie/watchlist")
-    fun getMoviesWatchlist(
+    suspend fun getMoviesWatchlist(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkMovie>
 
     @GET(value = "{account_id}/tv/watchlist")
-    fun getTvShowsWatchlist(
+    suspend fun getTvShowsWatchlist(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkTvShow>
 
     @GET(value = "{account_id}/movie/rated")
-    fun getRatedMovies(
+    suspend fun getRatedMovies(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkMovie>
 
     @GET(value = "{account_id}/tv/rated")
-    fun getRatedTvShows(
+    suspend fun getRatedTvShows(
         @Path(value = "account_id") accountId: String
     ): NetworkPagedResponse<NetworkTvShow>
 }

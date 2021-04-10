@@ -30,6 +30,8 @@ data class NetworkMovie(
     val genreIds: List<Int>?,
     @Json(name = "id")
     val id: Int?,
+    @Json(name = "media_type")
+    val mediaType: String?,
     @Json(name = "original_language")
     val originalLanguage: String?,
     @Json(name = "original_title")

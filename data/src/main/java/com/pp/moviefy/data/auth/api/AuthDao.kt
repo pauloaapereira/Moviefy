@@ -28,17 +28,17 @@ import retrofit2.http.POST
 interface AuthDao {
 
     @POST(value = "request_token")
-    fun authorize(
+    suspend fun authorize(
         @Body body: AuthorizeBody
     ): NetworkRequestToken
 
     @POST(value = "access_token")
-    fun login(
+    suspend fun login(
         @Body body: LoginBody
     ): NetworkAccessToken
 
     @DELETE(value = "access_token")
-    fun logout(
+    suspend fun logout(
         @Body body: LogoutBody
     ): NetworkLogout
 }
