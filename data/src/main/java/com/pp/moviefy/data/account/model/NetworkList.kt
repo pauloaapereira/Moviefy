@@ -19,19 +19,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkAccountLists(
-    @Json(name = "page")
-    val page: Int?,
-    @Json(name = "results")
-    val networkAccounts: List<NetworkAccount>?,
-    @Json(name = "total_pages")
-    val totalPages: Int?,
-    @Json(name = "total_results")
-    val totalResults: Int?
-)
-
-@JsonClass(generateAdapter = true)
-data class NetworkAccount(
+data class NetworkList(
     @Json(name = "adult")
     val adult: Int?,
     @Json(name = "average_rating")

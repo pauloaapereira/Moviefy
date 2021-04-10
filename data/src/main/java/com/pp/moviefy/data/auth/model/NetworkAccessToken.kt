@@ -32,3 +32,8 @@ data class NetworkAccessToken(
     @Json(name = "success")
     val success: Boolean?
 )
+
+data class LoginBody(
+    @Json(name = "request_token")
+    val requestToken: String
+)

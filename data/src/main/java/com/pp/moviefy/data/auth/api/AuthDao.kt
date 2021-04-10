@@ -15,20 +15,30 @@
  */
 package com.pp.moviefy.data.auth.api
 
+import com.pp.moviefy.data.auth.model.AuthorizeBody
+import com.pp.moviefy.data.auth.model.LoginBody
+import com.pp.moviefy.data.auth.model.LogoutBody
 import com.pp.moviefy.data.auth.model.NetworkAccessToken
 import com.pp.moviefy.data.auth.model.NetworkLogout
 import com.pp.moviefy.data.auth.model.NetworkRequestToken
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.POST
 
 interface AuthDao {
 
-    @POST
-    fun authorize(redirectTo: String): NetworkRequestToken
+    @POST(value = "request_token")
+    fun authorize(
+        @Body body: AuthorizeBody
+    ): NetworkRequestToken
 
-    @POST
-    fun login(requestToken: String): NetworkAccessToken
+    @POST(value = "access_token")
+    fun login(
+        @Body body: LoginBody
+    ): NetworkAccessToken
 
-    @DELETE
-    fun logout(accessToken: String): NetworkLogout
+    @DELETE(value = "access_token")
+    fun logout(
+        @Body body: LogoutBody
+    ): NetworkLogout
 }

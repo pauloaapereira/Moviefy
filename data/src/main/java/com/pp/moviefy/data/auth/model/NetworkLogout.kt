@@ -28,3 +28,8 @@ data class NetworkLogout(
     @Json(name = "success")
     val success: Boolean?
 )
+
+data class LogoutBody(
+    @Json(name = "access_token")
+    val accessToken: String
+)

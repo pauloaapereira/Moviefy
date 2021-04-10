@@ -13,26 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.auth.model
+package com.pp.moviefy.data.account.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkRequestToken(
-    @Json(name = "request_token")
-    val requestToken: String?,
-    @Json(name = "status_code")
-    val statusCode: Int?,
-    @Json(name = "status_message")
-    val statusMessage: String?,
-    @Json(name = "error_message")
-    val errorMessage: String?,
-    @Json(name = "success")
-    val success: Boolean?
-)
-
-data class AuthorizeBody(
-    @Json(name = "redirect_to")
-    val redirectTo: String
+data class AccountRating(
+    @Json(name = "created_at")
+    val createdAt: String?,
+    @Json(name = "value")
+    val value: Int?
 )
