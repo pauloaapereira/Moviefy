@@ -8,9 +8,20 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-def secretPropertiesFile = rootProject.file("secrets.properties")
-def secretProperties = new Properties()
-secretProperties.load(new FileInputStream(secretPropertiesFile))
+def getProperty(String filename, String propName) {
+    def propsFile = rootProject.file(filename)
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        if (props[propName] != null) {
+            return props[propName]
+        } else {
+            print("No such property " + propName + " in file " + filename)
+        }
+    } else {
+        print(filename + " does not exist!")
+    }
+}
 
 android {
     compileSdkVersion Configs.CompileSdkVersion
@@ -24,7 +35,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField("String", "TMDB_V3_KEY", secretProperties['TMDB_API_KEY'])
+        buildConfigField("String", "TMDB_V3_KEY", getProperty("secrets.properties", "TMDB_API_KEY"))
+        buildConfigField("String", "TMDB_V4_TOKEN", getProperty("secrets.properties", "TMDB_ACCESS_TOKEN"))
     }
 
     compileOptions {
