@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 package com.pp.moviefy.data.auth.model
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkRequestToken(
-    @Json(name = "request_token")
-    val requestToken: String?,
+data class NetworkAccessToken(
+    @Json(name = "access_token")
+    val accessToken: String?,
+    @Json(name = "account_id")
+    val accountId: String?,
     @Json(name = "status_code")
     val statusCode: Int?,
     @Json(name = "status_message")
