@@ -13,4 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.domain
+package com.pp.moviefy.data.remote.di
+
+import com.pp.moviefy.data.remote.interceptors.AuthInterceptor
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
+
+@Module
+@InstallIn(SingletonComponent::class)
+object InterceptorModule {
+
+    @Provides
+    fun provideAuthInterceptor(): Interceptor = AuthInterceptor()
+}

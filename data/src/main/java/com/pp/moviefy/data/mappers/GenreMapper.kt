@@ -13,19 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.di
+package com.pp.moviefy.data.mappers
 
-import com.pp.moviefy.data.remote.interceptors.AuthInterceptor
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
+import com.pp.moviefy.data.remote.common.model.NetworkGenre
+import com.pp.moviefy.domain.model.Genre
 
-@Module
-@InstallIn(SingletonComponent::class)
-object InterceptorModule {
+class GenreMapper : ApiMapper<NetworkGenre?, Genre> {
 
-    @Provides
-    fun provideAuthInterceptor(): Interceptor = AuthInterceptor()
+    override fun mapToDomain(obj: NetworkGenre?): Genre {
+        return Genre(
+            id = obj?.id ?: 0,
+            name = obj?.name ?: ""
+        )
+    }
 }

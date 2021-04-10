@@ -13,31 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.lists.model
+package com.pp.moviefy.data.remote.common.model
+
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkCreateList(
+data class NetworkImageList(
+    @Json(name = "backdrops")
+    val backdrops: List<NetworkImage>?,
     @Json(name = "id")
     val id: Int?,
-    @Json(name = "status_code")
-    val statusCode: Int?,
-    @Json(name = "status_message")
-    val statusMessage: String?,
-    @Json(name = "success")
-    val success: Boolean?,
-    @Json(name = "error_message")
-    val errorMessage: String?,
+    @Json(name = "posters")
+    val posters: List<NetworkImage>?
 )
 
-data class CreateListBody(
-    @Json(name = "name")
-    val name: String,
+@JsonClass(generateAdapter = true)
+data class NetworkImage(
+    @Json(name = "aspect_ratio")
+    val aspectRatio: Double?,
+    @Json(name = "file_path")
+    val filePath: String?,
+    @Json(name = "height")
+    val height: Int?,
     @Json(name = "iso_639_1")
-    val language: String,
-    @Json(name = "description")
-    val description: String? = null,
-    @Json(name = "public")
-    val isPublic: Boolean? = null
+    val language: Any?,
+    @Json(name = "vote_average")
+    val voteAverage: Double?,
+    @Json(name = "vote_count")
+    val voteCount: Int?,
+    @Json(name = "width")
+    val width: Int?
 )

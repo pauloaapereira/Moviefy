@@ -13,38 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.collections.model
+package com.pp.moviefy.data.remote.common.model
+
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkCollectionTranslations(
-    @Json(name = "id")
-    val id: Int?,
-    @Json(name = "translations")
-    val translations: List<TranslationData>?
-)
-
-@JsonClass(generateAdapter = true)
-data class TranslationData(
-    @Json(name = "data")
-    val translation: Translation?,
-    @Json(name = "english_name")
-    val englishName: String?,
+data class NetworkProductionCountry(
     @Json(name = "iso_3166_1")
-    val iso31661: String?,
-    @Json(name = "iso_639_1")
-    val iso6391: String?,
+    val country: String?,
     @Json(name = "name")
     val name: String?
-)
-
-@JsonClass(generateAdapter = true)
-data class Translation(
-    @Json(name = "homepage")
-    val homepage: String?,
-    @Json(name = "overview")
-    val overview: String?,
-    @Json(name = "title")
-    val title: String?
 )

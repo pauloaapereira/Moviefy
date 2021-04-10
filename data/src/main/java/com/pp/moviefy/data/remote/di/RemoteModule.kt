@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.di
+package com.pp.moviefy.data.remote.di
 
 import com.pp.moviefy.data.ApiConstants
 import dagger.Module
@@ -28,7 +28,7 @@ import javax.inject.Named
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object RemoteModule {
 
     @Provides
     fun provideOkHttpClient(authInterceptor: Interceptor): OkHttpClient {

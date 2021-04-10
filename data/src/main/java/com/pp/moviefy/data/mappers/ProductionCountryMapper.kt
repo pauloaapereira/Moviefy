@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.certifications.api
+package com.pp.moviefy.data.mappers
 
-import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
-import retrofit2.http.GET
+import com.pp.moviefy.data.remote.common.model.NetworkProductionCountry
+import com.pp.moviefy.domain.model.ProductionCountry
 
-interface CertificationsDao {
-
-    @GET(value = "movie/list")
-    suspend fun getMovieCertifications(): NetworkMovieOrTvCertifications
-
-    @GET(value = "tv/list")
-    suspend fun getTvCertifications(): NetworkMovieOrTvCertifications
+class ProductionCountryMapper : ApiMapper<NetworkProductionCountry?, ProductionCountry> {
+    override fun mapToDomain(obj: NetworkProductionCountry?): ProductionCountry {
+        return ProductionCountry(
+            country = obj?.country ?: "",
+            name = obj?.name ?: ""
+        )
+    }
 }

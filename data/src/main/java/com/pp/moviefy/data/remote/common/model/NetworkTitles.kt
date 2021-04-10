@@ -13,35 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.collections.model
-
+package com.pp.moviefy.data.remote.common.model
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkCollectionImages(
-    @Json(name = "backdrops")
-    val backdrops: List<Backdrop>?,
+data class NetworkTitles(
     @Json(name = "id")
     val id: Int?,
-    @Json(name = "posters")
-    val posters: List<Backdrop>?
+    @Json(name = "titles")
+    val titles: List<NetworkTitle>?
 )
 
 @JsonClass(generateAdapter = true)
-data class Backdrop(
-    @Json(name = "aspect_ratio")
-    val aspectRatio: Double?,
-    @Json(name = "file_path")
-    val filePath: String?,
-    @Json(name = "height")
-    val height: Int?,
-    @Json(name = "iso_639_1")
-    val iso6391: Any?,
-    @Json(name = "vote_average")
-    val voteAverage: Double?,
-    @Json(name = "vote_count")
-    val voteCount: Int?,
-    @Json(name = "width")
-    val width: Int?
+data class NetworkTitle(
+    @Json(name = "iso_3166_1")
+    val country: String?,
+    @Json(name = "title")
+    val title: String?,
+    @Json(name = "type")
+    val type: String?
 )

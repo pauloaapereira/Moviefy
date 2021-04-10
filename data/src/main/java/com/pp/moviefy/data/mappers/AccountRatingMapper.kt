@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.movies.model
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+package com.pp.moviefy.data.mappers
 
-@JsonClass(generateAdapter = true)
-data class NetworkMovieCredits(
-    @Json(name = "cast")
-    val cast: List<NetworkCast>?,
-    @Json(name = "crew")
-    val crew: List<NetworkCrew>?,
-    @Json(name = "id")
-    val id: Int?
-)
+import com.pp.moviefy.data.remote.common.model.NetworkAccountRating
+import com.pp.moviefy.domain.model.AccountRating
+
+class AccountRatingMapper : ApiMapper<NetworkAccountRating?, AccountRating> {
+
+    override fun mapToDomain(obj: NetworkAccountRating?): AccountRating {
+        return AccountRating(
+            createdAt = obj?.createdAt ?: "",
+            value = obj?.value ?: 0
+        )
+    }
+}

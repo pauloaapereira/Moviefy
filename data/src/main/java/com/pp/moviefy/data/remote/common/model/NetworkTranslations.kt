@@ -13,31 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v4.lists.model
+package com.pp.moviefy.data.remote.common.model
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkCreateList(
+data class NetworkTranslations(
     @Json(name = "id")
     val id: Int?,
-    @Json(name = "status_code")
-    val statusCode: Int?,
-    @Json(name = "status_message")
-    val statusMessage: String?,
-    @Json(name = "success")
-    val success: Boolean?,
-    @Json(name = "error_message")
-    val errorMessage: String?,
+    @Json(name = "translations")
+    val translations: List<TranslationData>?
 )
 
-data class CreateListBody(
-    @Json(name = "name")
-    val name: String,
+@JsonClass(generateAdapter = true)
+data class TranslationData(
+    @Json(name = "data")
+    val translation: Translation?,
+    @Json(name = "english_name")
+    val englishName: String?,
+    @Json(name = "iso_3166_1")
+    val country: String?,
     @Json(name = "iso_639_1")
-    val language: String,
-    @Json(name = "description")
-    val description: String? = null,
-    @Json(name = "public")
-    val isPublic: Boolean? = null
+    val language: String?,
+    @Json(name = "name")
+    val name: String?
+)
+
+@JsonClass(generateAdapter = true)
+data class Translation(
+    @Json(name = "homepage")
+    val homepage: String?,
+    @Json(name = "overview")
+    val overview: String?,
+    @Json(name = "title")
+    val title: String?
 )

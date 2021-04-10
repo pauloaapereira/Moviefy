@@ -19,7 +19,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class AccountRating(
+data class NetworkAccountRating(
     @Json(name = "created_at")
     val createdAt: String?,
     @Json(name = "value")

@@ -21,7 +21,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkMovie(
     @Json(name = "account_rating")
-    val accountRating: AccountRating?,
+    val accountRating: NetworkAccountRating?,
     @Json(name = "adult")
     val adult: Boolean?,
     @Json(name = "backdrop_path")
@@ -31,7 +31,7 @@ data class NetworkMovie(
     @Json(name = "budget")
     val budget: Int?,
     @Json(name = "genres")
-    val genres: List<Genre>?,
+    val genres: List<NetworkGenre>?,
     @Json(name = "genre_ids")
     val genreIds: List<Int>?,
     @Json(name = "homepage")
@@ -53,9 +53,9 @@ data class NetworkMovie(
     @Json(name = "poster_path")
     val posterPath: String?,
     @Json(name = "production_companies")
-    val productionCompanies: List<ProductionCompany>?,
+    val productionCompanies: List<NetworkProductionCompany>?,
     @Json(name = "production_countries")
-    val productionCountries: List<ProductionCountry>?,
+    val productionCountries: List<NetworkProductionCountry>?,
     @Json(name = "release_date")
     val releaseDate: String?,
     @Json(name = "revenue")
@@ -63,7 +63,7 @@ data class NetworkMovie(
     @Json(name = "runtime")
     val runtime: Int?,
     @Json(name = "spoken_languages")
-    val spokenLanguages: List<SpokenLanguage>?,
+    val spokenLanguages: List<NetworkSpokenLanguage>?,
     @Json(name = "status")
     val status: String?,
     @Json(name = "tagline")
@@ -76,40 +76,4 @@ data class NetworkMovie(
     val voteAverage: Double?,
     @Json(name = "vote_count")
     val voteCount: Int?
-)
-
-@JsonClass(generateAdapter = true)
-data class Genre(
-    @Json(name = "id")
-    val id: Int?,
-    @Json(name = "name")
-    val name: String?
-)
-
-@JsonClass(generateAdapter = true)
-data class ProductionCompany(
-    @Json(name = "id")
-    val id: Int?,
-    @Json(name = "logo_path")
-    val logoPath: String?,
-    @Json(name = "name")
-    val name: String?,
-    @Json(name = "origin_country")
-    val originCountry: String?
-)
-
-@JsonClass(generateAdapter = true)
-data class ProductionCountry(
-    @Json(name = "iso_3166_1")
-    val country: String?,
-    @Json(name = "name")
-    val name: String?
-)
-
-@JsonClass(generateAdapter = true)
-data class SpokenLanguage(
-    @Json(name = "iso_639_1")
-    val language: String?,
-    @Json(name = "name")
-    val name: String?
 )

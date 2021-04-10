@@ -13,16 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.certifications.api
+package com.pp.moviefy.data.remote.v3.tv.model
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
-import retrofit2.http.GET
+@JsonClass(generateAdapter = true)
+data class NetworkTvContentRating(
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "results")
+    val contentRatings: List<NetworkContentRating>?
+)
 
-interface CertificationsDao {
-
-    @GET(value = "movie/list")
-    suspend fun getMovieCertifications(): NetworkMovieOrTvCertifications
-
-    @GET(value = "tv/list")
-    suspend fun getTvCertifications(): NetworkMovieOrTvCertifications
-}
+@JsonClass(generateAdapter = true)
+data class NetworkContentRating(
+    @Json(name = "iso_3166_1")
+    val country: String?,
+    @Json(name = "rating")
+    val rating: String?
+)

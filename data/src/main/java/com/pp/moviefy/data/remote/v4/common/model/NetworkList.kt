@@ -40,9 +40,9 @@ data class NetworkList(
     @Json(name = "id")
     val id: Int?,
     @Json(name = "iso_3166_1")
-    val iso31661: String?,
+    val country: String?,
     @Json(name = "iso_639_1")
-    val iso6391: String?,
+    val language: String?,
     @Json(name = "name")
     val name: String?,
     @Json(name = "number_of_items")

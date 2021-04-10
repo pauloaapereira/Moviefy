@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.certifications.api
+package com.pp.moviefy.domain.model
 
-import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
-import retrofit2.http.GET
+data class AccountRating(
+    val createdAt: String,
+    val value: Int
+) {
 
-interface CertificationsDao {
-
-    @GET(value = "movie/list")
-    suspend fun getMovieCertifications(): NetworkMovieOrTvCertifications
-
-    @GET(value = "tv/list")
-    suspend fun getTvCertifications(): NetworkMovieOrTvCertifications
+    fun isValid() = createdAt.isNotEmpty()
 }

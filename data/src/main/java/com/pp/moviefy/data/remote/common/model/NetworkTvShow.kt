@@ -20,18 +20,40 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class NetworkTvShow(
-    @Json(name = "account_rating")
-    val accountRating: AccountRating?,
     @Json(name = "backdrop_path")
-    val backdropPath: Any?,
+    val backdropPath: String?,
+    @Json(name = "created_by")
+    val createdBy: List<CreatedBy>?,
+    @Json(name = "episode_run_time")
+    val episodeRunTime: List<Int>?,
     @Json(name = "first_air_date")
     val firstAirDate: String?,
+    @Json(name = "genres")
+    val genres: List<NetworkGenre>?,
     @Json(name = "genre_ids")
     val genreIds: List<Int>?,
+    @Json(name = "homepage")
+    val homepage: String?,
     @Json(name = "id")
     val id: Int?,
+    @Json(name = "in_production")
+    val inProduction: Boolean?,
+    @Json(name = "languages")
+    val languages: List<String>?,
+    @Json(name = "last_air_date")
+    val lastAirDate: String?,
+    @Json(name = "last_episode_to_air")
+    val lastEpisodeToAir: LastEpisodeToAir?,
     @Json(name = "name")
     val name: String?,
+    @Json(name = "networks")
+    val networks: List<Network>?,
+    @Json(name = "next_episode_to_air")
+    val nextEpisodeToAir: Any?,
+    @Json(name = "number_of_episodes")
+    val numberOfEpisodes: Int?,
+    @Json(name = "number_of_seasons")
+    val numberOfSeasons: Int?,
     @Json(name = "origin_country")
     val originCountry: List<String>?,
     @Json(name = "original_language")
@@ -44,8 +66,90 @@ data class NetworkTvShow(
     val popularity: Double?,
     @Json(name = "poster_path")
     val posterPath: String?,
+    @Json(name = "production_companies")
+    val productionCompanies: List<NetworkProductionCompany>?,
+    @Json(name = "production_countries")
+    val productionCountries: List<NetworkProductionCountry>?,
+    @Json(name = "seasons")
+    val seasons: List<Season>?,
+    @Json(name = "spoken_languages")
+    val spokenLanguages: List<NetworkSpokenLanguage>?,
+    @Json(name = "status")
+    val status: String?,
+    @Json(name = "tagline")
+    val tagline: String?,
+    @Json(name = "type")
+    val type: String?,
     @Json(name = "vote_average")
     val voteAverage: Double?,
     @Json(name = "vote_count")
     val voteCount: Int?
+)
+
+@JsonClass(generateAdapter = true)
+data class CreatedBy(
+    @Json(name = "credit_id")
+    val creditId: String?,
+    @Json(name = "gender")
+    val gender: Int?,
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "profile_path")
+    val profilePath: String?
+)
+
+@JsonClass(generateAdapter = true)
+data class LastEpisodeToAir(
+    @Json(name = "air_date")
+    val airDate: String?,
+    @Json(name = "episode_number")
+    val episodeNumber: Int?,
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "overview")
+    val overview: String?,
+    @Json(name = "production_code")
+    val productionCode: String?,
+    @Json(name = "season_number")
+    val seasonNumber: Int?,
+    @Json(name = "still_path")
+    val stillPath: String?,
+    @Json(name = "vote_average")
+    val voteAverage: Double?,
+    @Json(name = "vote_count")
+    val voteCount: Int?
+)
+
+@JsonClass(generateAdapter = true)
+data class Network(
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "logo_path")
+    val logoPath: String?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "origin_country")
+    val originCountry: String?
+)
+
+@JsonClass(generateAdapter = true)
+data class Season(
+    @Json(name = "air_date")
+    val airDate: String?,
+    @Json(name = "episode_count")
+    val episodeCount: Int?,
+    @Json(name = "id")
+    val id: Int?,
+    @Json(name = "name")
+    val name: String?,
+    @Json(name = "overview")
+    val overview: String?,
+    @Json(name = "poster_path")
+    val posterPath: String?,
+    @Json(name = "season_number")
+    val seasonNumber: Int?
 )

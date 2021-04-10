@@ -18,6 +18,8 @@ package com.pp.moviefy.data.remote.v3.di
 import com.pp.moviefy.data.remote.v3.certifications.api.CertificationsDao
 import com.pp.moviefy.data.remote.v3.collections.api.CollectionsDao
 import com.pp.moviefy.data.remote.v3.movies.api.MoviesDao
+import com.pp.moviefy.data.remote.v3.persons.api.PersonsDao
+import com.pp.moviefy.data.remote.v3.tv.api.TvDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,5 +46,15 @@ object DataV3Module {
     @Provides
     fun provideMoviesDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): MoviesDao {
         return retrofit.create(MoviesDao::class.java)
+    }
+
+    @Provides
+    fun provideTvDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): TvDao {
+        return retrofit.create(TvDao::class.java)
+    }
+
+    @Provides
+    fun providePersonsDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): PersonsDao {
+        return retrofit.create(PersonsDao::class.java)
     }
 }

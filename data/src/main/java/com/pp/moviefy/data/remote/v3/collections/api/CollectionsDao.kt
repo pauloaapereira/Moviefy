@@ -15,10 +15,10 @@
  */
 package com.pp.moviefy.data.remote.v3.collections.api
 
+import com.pp.moviefy.data.remote.common.model.NetworkImageList
 import com.pp.moviefy.data.remote.common.model.NetworkPagedResponse
+import com.pp.moviefy.data.remote.common.model.NetworkTranslations
 import com.pp.moviefy.data.remote.v3.collections.model.NetworkCollection
-import com.pp.moviefy.data.remote.v3.collections.model.NetworkCollectionImages
-import com.pp.moviefy.data.remote.v3.collections.model.NetworkCollectionTranslations
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -26,27 +26,27 @@ import retrofit2.http.Query
 interface CollectionsDao {
 
     @GET(value = "search/collection")
-    fun searchCollections(
+    suspend fun searchCollections(
         @Query(value = "query") query: String,
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null
     ): NetworkPagedResponse<NetworkCollection>
 
     @GET(value = "collection/{collection_id}")
-    fun getCollection(
+    suspend fun getCollection(
         @Path(value = "collection_id") collectionId: Int,
         @Query(value = "language") language: String? = null
     ): NetworkCollection
 
     @GET(value = "collection/{collection_id}/images")
-    fun getCollectionImages(
+    suspend fun getCollectionImages(
         @Path(value = "collection_id") collectionId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkCollectionImages
+    ): NetworkImageList
 
     @GET(value = "collection/{collection_id}/translations")
-    fun getCollectionTranslations(
+    suspend fun getCollectionTranslations(
         @Path(value = "collection_id") collectionId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkCollectionTranslations
+    ): NetworkTranslations
 }

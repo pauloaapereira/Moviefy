@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data.remote.v3.certifications.api
+package com.pp.moviefy.data.mappers
 
-import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
-import retrofit2.http.GET
+import com.pp.moviefy.data.remote.common.model.NetworkSpokenLanguage
+import com.pp.moviefy.domain.model.SpokenLanguage
 
-interface CertificationsDao {
-
-    @GET(value = "movie/list")
-    suspend fun getMovieCertifications(): NetworkMovieOrTvCertifications
-
-    @GET(value = "tv/list")
-    suspend fun getTvCertifications(): NetworkMovieOrTvCertifications
+class SpokenLanguageMapper : ApiMapper<NetworkSpokenLanguage?, SpokenLanguage> {
+    override fun mapToDomain(obj: NetworkSpokenLanguage?): SpokenLanguage {
+        return SpokenLanguage(
+            englishName = obj?.englishName ?: "",
+            language = obj?.language ?: "",
+            name = obj?.name ?: ""
+        )
+    }
 }
