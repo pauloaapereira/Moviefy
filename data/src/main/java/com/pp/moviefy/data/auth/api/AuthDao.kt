@@ -13,4 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.pp.moviefy.data
+package com.pp.moviefy.data.auth.api
+
+import com.pp.moviefy.data.auth.model.NetworkAccessToken
+import com.pp.moviefy.data.auth.model.NetworkLogout
+import com.pp.moviefy.data.auth.model.NetworkRequestToken
+import retrofit2.http.DELETE
+import retrofit2.http.POST
+
+interface AuthDao {
+
+    @POST
+    fun authorize(redirectTo: String): NetworkRequestToken
+
+    @POST
+    fun login(requestToken: String): NetworkAccessToken
+
+    @DELETE
+    fun logout(accessToken: String): NetworkLogout
+}
