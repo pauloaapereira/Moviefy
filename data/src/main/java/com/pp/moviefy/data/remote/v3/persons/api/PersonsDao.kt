@@ -15,11 +15,11 @@
  */
 package com.pp.moviefy.data.remote.v3.persons.api
 
-import com.pp.moviefy.data.remote.common.model.NetworkCredits
-import com.pp.moviefy.data.remote.common.model.NetworkPagedResponse
-import com.pp.moviefy.data.remote.common.model.NetworkTranslations
-import com.pp.moviefy.data.remote.v3.persons.model.NetworkPerson
-import com.pp.moviefy.data.remote.v3.persons.model.NetworkPersonImages
+import com.pp.moviefy.data.remote.common.model.ApiCredits
+import com.pp.moviefy.data.remote.common.model.ApiPagedResponse
+import com.pp.moviefy.data.remote.common.model.ApiTranslations
+import com.pp.moviefy.data.remote.v3.persons.model.ApiPerson
+import com.pp.moviefy.data.remote.v3.persons.model.ApiPersonImages
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -30,39 +30,39 @@ interface PersonsDao {
     suspend fun getPersonDetails(
         @Path(value = "person_id") personId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkPerson
+    ): ApiPerson
 
     @GET(value = "person/{person_id}/movie_credits")
     suspend fun getPersonMoviesCredits(
         @Path(value = "person_id") personId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkCredits
+    ): ApiCredits
 
     @GET(value = "person/{person_id}/tv_credits")
     suspend fun getPersonShowsCredits(
         @Path(value = "person_id") personId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkCredits
+    ): ApiCredits
 
     @GET(value = "person/{person_id}/images")
     suspend fun getPersonImages(
         @Path(value = "person_id") personId: Int,
-    ): NetworkPersonImages
+    ): ApiPersonImages
 
     @GET(value = "person/{person_id}/translations")
     suspend fun getPersonDescriptionTranslations(
         @Path(value = "person_id") personId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkTranslations
+    ): ApiTranslations
 
     @GET(value = "person/latest")
     suspend fun getLatestAddedPerson(
         @Query(value = "language") language: String? = null
-    ): NetworkPerson
+    ): ApiPerson
 
     @GET(value = "person/popular")
     suspend fun getPopularPersons(
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null
-    ): NetworkPagedResponse<NetworkPerson>
+    ): ApiPagedResponse<ApiPerson>
 }

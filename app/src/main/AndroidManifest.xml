@@ -13,6 +13,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pp.moviefy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.pp.moviefy.app.MoviefyApp"
         android:allowBackup="true"

@@ -16,29 +16,31 @@
 package com.pp.moviefy.data.remote.di
 
 import com.pp.moviefy.data.ApiConstants
+import com.pp.moviefy.data.remote.interceptors.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Named
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object RemoteModule {
 
     @Provides
-    fun provideOkHttpClient(authInterceptor: Interceptor): OkHttpClient {
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(authInterceptor)
+            .addInterceptor(AuthInterceptor())
             .build()
     }
 
     @Provides
-    @Named("v3Retrofit")
+    @Singleton
+    @V3Api
     fun provideV3Retrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
@@ -48,7 +50,8 @@ object RemoteModule {
     }
 
     @Provides
-    @Named("v4Retrofit")
+    @Singleton
+    @V4Api
     fun provideV4Retrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)

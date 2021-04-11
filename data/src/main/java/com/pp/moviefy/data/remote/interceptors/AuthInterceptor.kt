@@ -19,8 +19,9 @@ import com.pp.moviefy.data.ApiConstants
 import com.pp.moviefy.data.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
+import javax.inject.Inject
 
-class AuthInterceptor : Interceptor {
+class AuthInterceptor @Inject constructor(): Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
@@ -33,6 +34,7 @@ class AuthInterceptor : Interceptor {
         val request = originalRequest.newBuilder()
             .url(originalRequest.url())
             .addHeader("Authorization", "Bearer $accessToken")
+            .addHeader("Content-Type", "application/json;charset=utf-8")
             .build()
 
         return chain.proceed(request)

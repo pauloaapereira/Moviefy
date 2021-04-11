@@ -93,7 +93,7 @@ dependencies {
     implementation Compose.tooling
     implementation Compose.runtime
     implementation Compose.hiltNavigation
-    implementation Libs.DateTime.jodaTime
+    implementation Libs.Dates.threetenabp
     implementation Libs.Lottie.lottie
     implementation Libs.Accompanist.insets
     implementation Libs.GoogleLocation.location
@@ -104,6 +104,10 @@ dependencies {
     implementation Libs.Hilt.library
     kapt Libs.Hilt.googleAndroidCompiler
     kapt Libs.Hilt.googleCompiler
+
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.retrofitConverter
+    implementation Libs.Dates.threetenabp
 
     androidTestImplementation Tests.junit
     androidTestImplementation Tests.junitKotlin

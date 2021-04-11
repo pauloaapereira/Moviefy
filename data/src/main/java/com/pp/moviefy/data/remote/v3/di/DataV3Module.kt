@@ -15,6 +15,7 @@
  */
 package com.pp.moviefy.data.remote.v3.di
 
+import com.pp.moviefy.data.remote.di.V3Api
 import com.pp.moviefy.data.remote.v3.certifications.api.CertificationsDao
 import com.pp.moviefy.data.remote.v3.collections.api.CollectionsDao
 import com.pp.moviefy.data.remote.v3.movies.api.MoviesDao
@@ -25,36 +26,33 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import javax.inject.Named
 
 @Module
 @InstallIn(SingletonComponent::class)
 object DataV3Module {
 
-    private const val RETROFIT_NAMED_INJECT = "v3Retrofit"
-
     @Provides
-    fun provideCertificationsDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): CertificationsDao {
+    fun provideCertificationsDao(@V3Api retrofit: Retrofit): CertificationsDao {
         return retrofit.create(CertificationsDao::class.java)
     }
 
     @Provides
-    fun provideCollectionsDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): CollectionsDao {
+    fun provideCollectionsDao(@V3Api retrofit: Retrofit): CollectionsDao {
         return retrofit.create(CollectionsDao::class.java)
     }
 
     @Provides
-    fun provideMoviesDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): MoviesDao {
+    fun provideMoviesDao(@V3Api retrofit: Retrofit): MoviesDao {
         return retrofit.create(MoviesDao::class.java)
     }
 
     @Provides
-    fun provideTvDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): TvDao {
+    fun provideTvDao(@V3Api retrofit: Retrofit): TvDao {
         return retrofit.create(TvDao::class.java)
     }
 
     @Provides
-    fun providePersonsDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): PersonsDao {
+    fun providePersonsDao(@V3Api retrofit: Retrofit): PersonsDao {
         return retrofit.create(PersonsDao::class.java)
     }
 }

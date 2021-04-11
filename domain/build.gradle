@@ -47,6 +47,7 @@ dependencies {
 
     implementation Libs.Kotlin.stdlib
     implementation Libs.Coroutines.core
+    implementation Libs.Dates.threetenabp
 
     testImplementation Tests.junit
     testImplementation Libs.Coroutines.test

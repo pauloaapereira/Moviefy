@@ -18,27 +18,27 @@ package com.pp.moviefy.data.remote.v4.auth.api
 import com.pp.moviefy.data.remote.v4.auth.model.AuthorizeBody
 import com.pp.moviefy.data.remote.v4.auth.model.LoginBody
 import com.pp.moviefy.data.remote.v4.auth.model.LogoutBody
-import com.pp.moviefy.data.remote.v4.auth.model.NetworkAccessToken
-import com.pp.moviefy.data.remote.v4.auth.model.NetworkLogout
-import com.pp.moviefy.data.remote.v4.auth.model.NetworkRequestToken
+import com.pp.moviefy.data.remote.v4.auth.model.ApiAccessToken
+import com.pp.moviefy.data.remote.v4.auth.model.ApiLogout
+import com.pp.moviefy.data.remote.v4.auth.model.ApiRequestToken
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.POST
 
 interface AuthDao {
 
-    @POST(value = "request_token")
-    suspend fun authorize(
+    @POST(value = "auth/request_token")
+    suspend fun requestAuthorization(
         @Body body: AuthorizeBody
-    ): NetworkRequestToken
+    ): ApiRequestToken
 
-    @POST(value = "access_token")
+    @POST(value = "auth/access_token")
     suspend fun login(
         @Body body: LoginBody
-    ): NetworkAccessToken
+    ): ApiAccessToken
 
-    @DELETE(value = "access_token")
+    @DELETE(value = "auth/access_token")
     suspend fun logout(
         @Body body: LogoutBody
-    ): NetworkLogout
+    ): ApiLogout
 }

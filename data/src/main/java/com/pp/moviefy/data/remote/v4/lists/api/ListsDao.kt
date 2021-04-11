@@ -15,17 +15,17 @@
  */
 package com.pp.moviefy.data.remote.v4.lists.api
 
-import com.pp.moviefy.data.remote.v4.common.model.NetworkList
+import com.pp.moviefy.data.remote.v4.common.model.ApiList
 import com.pp.moviefy.data.remote.v4.lists.model.AddListItemsBody
 import com.pp.moviefy.data.remote.v4.lists.model.CreateListBody
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkClearList
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkCreateList
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkDeleteList
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkItemStatus
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkListAddItems
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkListRemoveItems
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkListUpdateItems
-import com.pp.moviefy.data.remote.v4.lists.model.NetworkUpdateList
+import com.pp.moviefy.data.remote.v4.lists.model.ApiClearList
+import com.pp.moviefy.data.remote.v4.lists.model.ApiCreateList
+import com.pp.moviefy.data.remote.v4.lists.model.ApiDeleteList
+import com.pp.moviefy.data.remote.v4.lists.model.ApiItemStatus
+import com.pp.moviefy.data.remote.v4.lists.model.ApiListAddItems
+import com.pp.moviefy.data.remote.v4.lists.model.ApiListRemoveItems
+import com.pp.moviefy.data.remote.v4.lists.model.ApiListUpdateItems
+import com.pp.moviefy.data.remote.v4.lists.model.ApiUpdateList
 import com.pp.moviefy.data.remote.v4.lists.model.RemoveListItemsBody
 import com.pp.moviefy.data.remote.v4.lists.model.UpdateListBody
 import com.pp.moviefy.data.remote.v4.lists.model.UpdateListItemsBody
@@ -44,51 +44,51 @@ interface ListsDao {
         @Query(value = "page") page: Int? = null,
         @Query(value = "language") language: String? = null,
         @Query(value = "sort_by") sortBy: String? = null,
-    ): NetworkList
+    ): ApiList
 
     @POST
     suspend fun createList(
         @Body body: CreateListBody
-    ): NetworkCreateList
+    ): ApiCreateList
 
     @PUT(value = "{list_id}")
     suspend fun updateList(
         @Path(value = "list_id") listId: Int,
         @Body body: UpdateListBody
-    ): NetworkUpdateList
+    ): ApiUpdateList
 
     @GET(value = "{list_id}/clear")
     suspend fun clearList(
         @Path(value = "list_id") listId: Int
-    ): NetworkClearList
+    ): ApiClearList
 
     @PUT(value = "{list_id}")
     suspend fun deleteList(
         @Path(value = "list_id") listId: Int,
-    ): NetworkDeleteList
+    ): ApiDeleteList
 
     @POST(value = "{list_id}/items")
     suspend fun addListItems(
         @Path(value = "list_id") listId: Int,
         @Body body: AddListItemsBody
-    ): NetworkListAddItems
+    ): ApiListAddItems
 
     @PUT(value = "{list_id}/items")
     suspend fun updateListItems(
         @Path(value = "list_id") listId: Int,
         @Body body: UpdateListItemsBody
-    ): NetworkListUpdateItems
+    ): ApiListUpdateItems
 
     @PUT(value = "{list_id}/items")
     suspend fun removeListItems(
         @Path(value = "list_id") listId: Int,
         @Body body: RemoveListItemsBody
-    ): NetworkListRemoveItems
+    ): ApiListRemoveItems
 
     @GET(value = "{list_id}/item_status")
     suspend fun checkItemStatus(
         @Path(value = "list_id") listId: Int,
         @Query(value = "media_id") mediaId: Int,
         @Query(value = "media_type") mediaType: String,
-    ): NetworkItemStatus
+    ): ApiItemStatus
 }

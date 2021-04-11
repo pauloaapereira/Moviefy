@@ -18,12 +18,20 @@ package com.pp.moviefy.presentation
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.pp.design.core.theme.ComposifyTheme
+import com.pp.moviefy.presentation.auth.AuthScreen
+import com.pp.moviefy.presentation.auth.AuthViewModel
+import com.pp.moviefy.presentation.navigation.NavigationDirections
+import com.pp.moviefy.presentation.navigation.NavigationManager
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,17 +40,33 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposifyTheme {
-                MyApp()
+                App()
             }
         }
     }
 }
 
-// Start building your app here!
 @Composable
-fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+fun App() {
+    val navController = rememberNavController()
+
+    NavigationManager.command.collectAsState().value.also { command ->
+        if (command.destination.isNotEmpty()) {
+            navController.navigate(command.destination)
+        }
+    }
+
+    NavHost(
+        navController,
+        startDestination = NavigationDirections.Authentication.destination
+    ) {
+        composable(NavigationDirections.Authentication.destination) { backStackEntry ->
+            val viewModel = hiltNavGraphViewModel<AuthViewModel>(backStackEntry = backStackEntry)
+            AuthScreen(viewModel = viewModel)
+        }
+        composable(NavigationDirections.Home.destination) {
+            Text(text = "hola home")
+        }
     }
 }
 
@@ -50,7 +74,7 @@ fun MyApp() {
 @Composable
 fun LightPreview() {
     ComposifyTheme {
-        MyApp()
+        App()
     }
 }
 
@@ -58,6 +82,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     ComposifyTheme(darkTheme = true) {
-        MyApp()
+        App()
     }
 }

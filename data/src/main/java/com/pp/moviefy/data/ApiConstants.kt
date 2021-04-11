@@ -19,8 +19,5 @@ internal object ApiConstants {
     const val V3_BASE_URL = "https://api.themoviedb.org/3/"
     const val V4_BASE_URL = "https://api.themoviedb.org/4/"
 
-    const val AUTHORIZATION_ENDPOINT = "https://www.themoviedb.org/auth/access?request_token="
-    const val AUTHORIZED_REDIRECTION = "/auth/access/approve"
-
     var accessToken = ""
 }

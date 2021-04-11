@@ -15,6 +15,8 @@
  */
 package com.pp.moviefy.domain.model
 
+import org.threeten.bp.LocalDateTime
+
 data class Movie(
     val accountRating: AccountRating,
     val adult: Boolean,
@@ -34,7 +36,7 @@ data class Movie(
     val posterPath: String,
     val productionCompanies: List<ProductionCompany>,
     val productionCountries: List<ProductionCountry>,
-    val releaseDate: String,
+    val releaseDate: LocalDateTime,
     val revenue: Int,
     val runtime: Int,
     val spokenLanguages: List<SpokenLanguage>,
@@ -43,5 +45,43 @@ data class Movie(
     val title: String,
     val video: Boolean,
     val voteAverage: Double,
-    val voteCount: Int
+    val voteCount: Int,
+    val success: Boolean
 )
+
+data class AccountRating(
+    val createdAt: String,
+    val value: Int
+) {
+
+    fun isValid() = createdAt.isNotEmpty()
+}
+
+data class Genre(
+    val id: Int,
+    val name: String
+)
+
+data class ProductionCompany(
+    val id: Int,
+    val logoPath: String,
+    val name: String,
+    val originCountry: String
+) {
+
+    fun isValid() = name.isNotEmpty()
+}
+
+data class ProductionCountry(
+    val country: String,
+    val name: String
+)
+
+data class SpokenLanguage(
+    val englishName: String,
+    val language: String,
+    val name: String
+) {
+
+    fun isValid() = language.isNotEmpty()
+}

@@ -15,19 +15,19 @@
  */
 package com.pp.moviefy.data.remote.v3.movies.api
 
-import com.pp.moviefy.data.remote.common.model.NetworkCredits
-import com.pp.moviefy.data.remote.common.model.NetworkImageList
-import com.pp.moviefy.data.remote.common.model.NetworkMovie
-import com.pp.moviefy.data.remote.common.model.NetworkPagedResponse
-import com.pp.moviefy.data.remote.common.model.NetworkRate
-import com.pp.moviefy.data.remote.common.model.NetworkReviews
-import com.pp.moviefy.data.remote.common.model.NetworkTitles
-import com.pp.moviefy.data.remote.common.model.NetworkTranslations
-import com.pp.moviefy.data.remote.common.model.NetworkVideos
-import com.pp.moviefy.data.remote.common.model.NetworkWatchProviders
+import com.pp.moviefy.data.remote.common.model.ApiCredits
+import com.pp.moviefy.data.remote.common.model.ApiImageList
+import com.pp.moviefy.data.remote.common.model.ApiMovie
+import com.pp.moviefy.data.remote.common.model.ApiPagedResponse
+import com.pp.moviefy.data.remote.common.model.ApiRate
+import com.pp.moviefy.data.remote.common.model.ApiReviews
+import com.pp.moviefy.data.remote.common.model.ApiTitles
+import com.pp.moviefy.data.remote.common.model.ApiTranslations
+import com.pp.moviefy.data.remote.common.model.ApiVideos
+import com.pp.moviefy.data.remote.common.model.ApiWatchProviders
 import com.pp.moviefy.data.remote.common.model.RateBody
-import com.pp.moviefy.data.remote.v3.movies.model.NetworkMovieReleaseDates
-import com.pp.moviefy.data.remote.v3.movies.model.NetworkMoviesPlayingOrUpcoming
+import com.pp.moviefy.data.remote.v3.movies.model.ApiMovieReleaseDates
+import com.pp.moviefy.data.remote.v3.movies.model.ApiMoviesPlayingOrUpcoming
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
@@ -46,110 +46,110 @@ interface MoviesDao {
         @Query(value = "region") region: String? = null,
         @Query(value = "year") year: Int? = null,
         @Query(value = "primary_release_year") primaryReleaseYear: Int? = null,
-    ): NetworkPagedResponse<NetworkMovie>
+    ): ApiPagedResponse<ApiMovie>
 
     @GET(value = "movie/{movie_id}")
     suspend fun getMovieDetails(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkMovie
+    ): ApiMovie
 
     @GET(value = "movie/{movie_id}/credits")
     suspend fun getMovieCredits(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null
-    ): NetworkCredits
+    ): ApiCredits
 
     @GET(value = "movie/{movie_id}/alternative_titles")
     suspend fun getMovieAlternativeTitles(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "country") country: String? = null
-    ): NetworkTitles
+    ): ApiTitles
 
     @GET(value = "movie/{movie_id}/images")
     suspend fun getMovieImages(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null,
         @Query(value = "include_image_language") includeImageLanguage: String? = null
-    ): NetworkImageList
+    ): ApiImageList
 
     // TODO: credit JustWatch for this data
     @GET(value = "movie/{movie_id}/watch/providers")
     suspend fun getMovieWatchProviders(
         @Path(value = "movie_id") movieId: Int
-    ): NetworkWatchProviders
+    ): ApiWatchProviders
 
     @GET(value = "movie/{movie_id}/release_dates")
     suspend fun getMovieReleaseDates(
         @Path(value = "movie_id") movieId: Int
-    ): NetworkMovieReleaseDates
+    ): ApiMovieReleaseDates
 
     @GET(value = "movie/{movie_id}/reviews")
     suspend fun getMovieReviews(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null
-    ): NetworkReviews
+    ): ApiReviews
 
     @GET(value = "movie/{movie_id}/similar")
     suspend fun getSimilarMovies(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null
-    ): NetworkPagedResponse<NetworkMovie>
+    ): ApiPagedResponse<ApiMovie>
 
     @GET(value = "movie/{movie_id}/translations")
     suspend fun getMovieTranslations(
         @Path(value = "movie_id") movieId: Int
-    ): NetworkTranslations
+    ): ApiTranslations
 
     @GET(value = "movie/{movie_id}/videos")
     suspend fun getMovieVideos(
         @Path(value = "movie_id") movieId: Int,
         @Query(value = "language") language: String? = null,
-    ): NetworkVideos
+    ): ApiVideos
 
     @POST(value = "movie/{movie_id}/rating")
     suspend fun rateMovie(
         @Path(value = "movie_id") movieId: Int,
         @Body body: RateBody
-    ): NetworkRate
+    ): ApiRate
 
     @DELETE(value = "movie/{movie_id}/rating")
     suspend fun deleteMovieRating(
         @Path(value = "movie_id") movieId: Int
-    ): NetworkRate
+    ): ApiRate
 
     @GET(value = "movie/latest")
     suspend fun getLatestMovieOut(
         @Query(value = "language") language: String? = null,
-    ): NetworkMovie
+    ): ApiMovie
 
     @GET(value = "movie/now_playing")
     suspend fun getMoviesNowPlaying(
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null,
         @Query(value = "region") region: String? = null,
-    ): NetworkMoviesPlayingOrUpcoming
+    ): ApiMoviesPlayingOrUpcoming
 
     @GET(value = "movie/popular")
     suspend fun getTodayPopularMovies(
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null,
         @Query(value = "region") region: String? = null,
-    ): NetworkPagedResponse<NetworkMovie>
+    ): ApiPagedResponse<ApiMovie>
 
     @GET(value = "movie/top_rated")
     suspend fun getTopRatedMovies(
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null,
         @Query(value = "region") region: String? = null,
-    ): NetworkPagedResponse<NetworkMovie>
+    ): ApiPagedResponse<ApiMovie>
 
     @GET(value = "movie/upcoming")
     suspend fun getUpcomingMovies(
         @Query(value = "language") language: String? = null,
         @Query(value = "page") page: Int? = null,
         @Query(value = "region") region: String? = null,
-    ): NetworkMoviesPlayingOrUpcoming
+    ): ApiMoviesPlayingOrUpcoming
 }

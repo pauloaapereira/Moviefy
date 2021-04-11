@@ -72,7 +72,7 @@ dependencies {
     implementation Compose.tooling
     implementation Compose.runtime
     implementation Compose.hiltNavigation
-    implementation Libs.DateTime.jodaTime
+    implementation Libs.Dates.threetenabp
     implementation Libs.Lottie.lottie
     implementation Libs.Accompanist.insets
     implementation Libs.GoogleLocation.location

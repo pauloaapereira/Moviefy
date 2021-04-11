@@ -15,6 +15,7 @@
  */
 package com.pp.moviefy.data.remote.v4.di
 
+import com.pp.moviefy.data.remote.di.V4Api
 import com.pp.moviefy.data.remote.v4.account.api.AccountDao
 import com.pp.moviefy.data.remote.v4.auth.api.AuthDao
 import com.pp.moviefy.data.remote.v4.lists.api.ListsDao
@@ -23,26 +24,23 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import javax.inject.Named
 
 @Module
 @InstallIn(SingletonComponent::class)
 object DataV4Module {
 
-    private const val RETROFIT_NAMED_INJECT = "v4Retrofit"
-
     @Provides
-    fun provideAuthDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): AuthDao {
+    fun provideAuthDao(@V4Api retrofit: Retrofit): AuthDao {
         return retrofit.create(AuthDao::class.java)
     }
 
     @Provides
-    fun provideAccountDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): AccountDao {
+    fun provideAccountDao(@V4Api retrofit: Retrofit): AccountDao {
         return retrofit.create(AccountDao::class.java)
     }
 
     @Provides
-    fun provideListsDao(@Named(RETROFIT_NAMED_INJECT) retrofit: Retrofit): ListsDao {
+    fun provideListsDao(@V4Api retrofit: Retrofit): ListsDao {
         return retrofit.create(ListsDao::class.java)
     }
 }

@@ -57,8 +57,8 @@ object Libs {
         const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
     }
 
-    object DateTime {
-        const val jodaTime = "net.danlew:android.joda:2.10.9.1"
+    object Dates {
+        const val threetenabp = "com.jakewharton.threetenabp:threetenabp:1.3.0"
     }
 
     object Lottie {
@@ -88,4 +88,7 @@ object Libs {
         const val retrofitConverter =  "com.squareup.retrofit2:converter-moshi:$version"
     }
 
+    object Moshi {
+        const val codegen =  "com.squareup.moshi:moshi-kotlin-codegen:1.6.0"
+    }
 }

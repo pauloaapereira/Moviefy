@@ -15,14 +15,14 @@
  */
 package com.pp.moviefy.data.remote.v3.certifications.api
 
-import com.pp.moviefy.data.remote.v3.certifications.model.NetworkMovieOrTvCertifications
+import com.pp.moviefy.data.remote.v3.certifications.model.ApiMovieOrTvCertifications
 import retrofit2.http.GET
 
 interface CertificationsDao {
 
     @GET(value = "movie/list")
-    suspend fun getMovieCertifications(): NetworkMovieOrTvCertifications
+    suspend fun getMovieCertifications(): ApiMovieOrTvCertifications
 
     @GET(value = "tv/list")
-    suspend fun getTvCertifications(): NetworkMovieOrTvCertifications
+    suspend fun getTvCertifications(): ApiMovieOrTvCertifications
 }
