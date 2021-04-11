@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.v4.lists.model
 import com.pp.moviefy.data.remote.v4.common.model.ApiCompressedMovie
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiListRemoveItems(
     @field:Json(name = "results")

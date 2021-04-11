@@ -17,8 +17,6 @@ package com.pp.moviefy.data.remote.v4.common.model
 
 import com.pp.moviefy.data.remote.common.model.ApiMovie
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiList(
     @field:Json(name = "adult")
@@ -74,7 +72,6 @@ data class ApiList(
     @field:Json(name = "error_message")
     val errorMessage: String?
 )
-
 
 data class ApiListCreatedBy(
     @field:Json(name = "gravatar_hash")

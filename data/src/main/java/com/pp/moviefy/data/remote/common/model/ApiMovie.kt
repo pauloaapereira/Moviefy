@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.common.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiMovie(
     @field:Json(name = "account_rating")
@@ -86,7 +84,6 @@ data class ApiMovie(
     val errorMessage: String?
 )
 
-
 data class ApiAccountRating(
     @field:Json(name = "created_at")
     val createdAt: String?,
@@ -94,14 +91,12 @@ data class ApiAccountRating(
     val value: Int?
 )
 
-
 data class ApiGenre(
     @field:Json(name = "id")
     val id: Int?,
     @field:Json(name = "name")
     val name: String?
 )
-
 
 data class ApiProductionCompany(
     @field:Json(name = "id")
@@ -114,14 +109,12 @@ data class ApiProductionCompany(
     val originCountry: String?
 )
 
-
 data class ApiProductionCountry(
     @field:Json(name = "iso_3166_1")
     val country: String?,
     @field:Json(name = "name")
     val name: String?
 )
-
 
 data class ApiSpokenLanguage(
     @field:Json(name = "english_name")
@@ -131,4 +124,3 @@ data class ApiSpokenLanguage(
     @field:Json(name = "name")
     val name: String?
 )
-

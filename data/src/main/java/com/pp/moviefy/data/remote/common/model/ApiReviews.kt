@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.common.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiReviews(
     @field:Json(name = "id")
@@ -39,7 +37,6 @@ data class ApiReviews(
     val errorMessage: String?
 )
 
-
 data class ApiReview(
     @field:Json(name = "author")
     val author: String?,
@@ -56,7 +53,6 @@ data class ApiReview(
     @field:Json(name = "url")
     val url: String?
 )
-
 
 data class ApiAuthorDetails(
     @field:Json(name = "avatar_path")

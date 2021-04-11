@@ -17,8 +17,6 @@ package com.pp.moviefy.data.remote.v3.persons.model
 
 import com.pp.moviefy.data.remote.common.model.ApiImage
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiPersonImages(
     @field:Json(name = "id")

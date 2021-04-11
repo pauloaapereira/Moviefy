@@ -17,8 +17,6 @@ package com.pp.moviefy.data.remote.v3.movies.model
 
 import com.pp.moviefy.data.remote.common.model.ApiMovie
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiMoviesPlayingOrUpcoming(
     @field:Json(name = "dates")
@@ -40,7 +38,6 @@ data class ApiMoviesPlayingOrUpcoming(
     @field:Json(name = "error_message")
     val errorMessage: String?
 )
-
 
 data class ApiDates(
     @field:Json(name = "maximum")

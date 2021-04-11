@@ -17,7 +17,6 @@ package com.pp.moviefy.data.remote.v4.lists.api
 
 import com.pp.moviefy.data.remote.v4.common.model.ApiList
 import com.pp.moviefy.data.remote.v4.lists.model.AddListItemsBody
-import com.pp.moviefy.data.remote.v4.lists.model.CreateListBody
 import com.pp.moviefy.data.remote.v4.lists.model.ApiClearList
 import com.pp.moviefy.data.remote.v4.lists.model.ApiCreateList
 import com.pp.moviefy.data.remote.v4.lists.model.ApiDeleteList
@@ -26,6 +25,7 @@ import com.pp.moviefy.data.remote.v4.lists.model.ApiListAddItems
 import com.pp.moviefy.data.remote.v4.lists.model.ApiListRemoveItems
 import com.pp.moviefy.data.remote.v4.lists.model.ApiListUpdateItems
 import com.pp.moviefy.data.remote.v4.lists.model.ApiUpdateList
+import com.pp.moviefy.data.remote.v4.lists.model.CreateListBody
 import com.pp.moviefy.data.remote.v4.lists.model.RemoveListItemsBody
 import com.pp.moviefy.data.remote.v4.lists.model.UpdateListBody
 import com.pp.moviefy.data.remote.v4.lists.model.UpdateListItemsBody

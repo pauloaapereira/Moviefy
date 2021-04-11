@@ -15,12 +15,12 @@
  */
 package com.pp.moviefy.data.remote.v4.auth.api
 
-import com.pp.moviefy.data.remote.v4.auth.model.AuthorizeBody
-import com.pp.moviefy.data.remote.v4.auth.model.LoginBody
-import com.pp.moviefy.data.remote.v4.auth.model.LogoutBody
 import com.pp.moviefy.data.remote.v4.auth.model.ApiAccessToken
 import com.pp.moviefy.data.remote.v4.auth.model.ApiLogout
 import com.pp.moviefy.data.remote.v4.auth.model.ApiRequestToken
+import com.pp.moviefy.data.remote.v4.auth.model.AuthorizeBody
+import com.pp.moviefy.data.remote.v4.auth.model.LoginBody
+import com.pp.moviefy.data.remote.v4.auth.model.LogoutBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.POST

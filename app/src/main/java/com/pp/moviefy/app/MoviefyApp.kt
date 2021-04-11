@@ -26,5 +26,4 @@ class MoviefyApp : Application() {
         super.onCreate()
         AndroidThreeTen.init(this)
     }
-
 }

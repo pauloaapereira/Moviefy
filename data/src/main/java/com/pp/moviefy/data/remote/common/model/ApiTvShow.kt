@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.common.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiTvShow(
     @field:Json(name = "backdrop_path")
@@ -94,7 +92,6 @@ data class ApiTvShow(
     val errorMessage: String?
 )
 
-
 data class ApiTvShowCreatedBy(
     @field:Json(name = "credit_id")
     val creditId: String?,
@@ -107,7 +104,6 @@ data class ApiTvShowCreatedBy(
     @field:Json(name = "profile_path")
     val profilePath: String?
 )
-
 
 data class ApiLastEpisodeToAir(
     @field:Json(name = "air_date")
@@ -132,7 +128,6 @@ data class ApiLastEpisodeToAir(
     val voteCount: Int?
 )
 
-
 data class ApiNetwork(
     @field:Json(name = "id")
     val id: Int?,
@@ -143,7 +138,6 @@ data class ApiNetwork(
     @field:Json(name = "origin_country")
     val originCountry: String?
 )
-
 
 data class ApiSeason(
     @field:Json(name = "air_date")

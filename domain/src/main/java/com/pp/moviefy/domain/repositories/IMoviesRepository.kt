@@ -23,7 +23,6 @@ import com.pp.moviefy.domain.model.MovieReleaseDates
 import com.pp.moviefy.domain.model.MoviesPlayingOrUpcoming
 import com.pp.moviefy.domain.model.PagedResponse
 import com.pp.moviefy.domain.model.Reviews
-import com.pp.moviefy.domain.model.Title
 import com.pp.moviefy.domain.model.Titles
 import com.pp.moviefy.domain.model.Translations
 import com.pp.moviefy.domain.model.Videos
@@ -127,5 +126,4 @@ interface IMoviesRepository {
         page: Int? = null,
         region: String? = null,
     ): Result<MoviesPlayingOrUpcoming>
-
 }

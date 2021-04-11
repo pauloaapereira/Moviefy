@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.v4.lists.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiUpdateList(
     @field:Json(name = "status_code")

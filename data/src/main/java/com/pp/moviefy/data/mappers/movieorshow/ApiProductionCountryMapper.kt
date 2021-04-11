@@ -20,7 +20,7 @@ import com.pp.moviefy.data.remote.common.model.ApiProductionCountry
 import com.pp.moviefy.domain.model.ProductionCountry
 import javax.inject.Inject
 
-class ApiProductionCountryMapper @Inject constructor(): ApiMapper<ApiProductionCountry, ProductionCountry> {
+class ApiProductionCountryMapper @Inject constructor() : ApiMapper<ApiProductionCountry, ProductionCountry> {
     override fun mapToDomain(obj: ApiProductionCountry): ProductionCountry {
         return ProductionCountry(
             country = obj.country ?: "",

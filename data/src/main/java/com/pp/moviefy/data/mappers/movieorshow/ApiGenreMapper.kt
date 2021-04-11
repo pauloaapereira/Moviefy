@@ -20,7 +20,7 @@ import com.pp.moviefy.data.remote.common.model.ApiGenre
 import com.pp.moviefy.domain.model.Genre
 import javax.inject.Inject
 
-class ApiGenreMapper @Inject constructor(): ApiMapper<ApiGenre, Genre> {
+class ApiGenreMapper @Inject constructor() : ApiMapper<ApiGenre, Genre> {
 
     override fun mapToDomain(obj: ApiGenre): Genre {
         return Genre(

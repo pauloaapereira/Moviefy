@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.v3.tv.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiTvContentRating(
     @field:Json(name = "id")
@@ -32,7 +30,6 @@ data class ApiTvContentRating(
     @field:Json(name = "error_message")
     val errorMessage: String?
 )
-
 
 data class ApiContentRating(
     @field:Json(name = "iso_3166_1")

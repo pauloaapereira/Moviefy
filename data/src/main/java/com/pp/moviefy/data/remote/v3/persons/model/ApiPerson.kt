@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.v3.persons.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiPerson(
     @field:Json(name = "adult")

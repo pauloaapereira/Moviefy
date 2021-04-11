@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.common.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiPagedResponse <T>(
     @field:Json(name = "page")

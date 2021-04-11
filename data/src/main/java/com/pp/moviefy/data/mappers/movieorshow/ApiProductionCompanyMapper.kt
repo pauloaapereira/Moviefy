@@ -20,7 +20,7 @@ import com.pp.moviefy.data.remote.common.model.ApiProductionCompany
 import com.pp.moviefy.domain.model.ProductionCompany
 import javax.inject.Inject
 
-class ApiProductionCompanyMapper @Inject constructor(): ApiMapper<ApiProductionCompany, ProductionCompany> {
+class ApiProductionCompanyMapper @Inject constructor() : ApiMapper<ApiProductionCompany, ProductionCompany> {
     override fun mapToDomain(obj: ApiProductionCompany): ProductionCompany {
         return ProductionCompany(
             id = obj.id ?: 0,

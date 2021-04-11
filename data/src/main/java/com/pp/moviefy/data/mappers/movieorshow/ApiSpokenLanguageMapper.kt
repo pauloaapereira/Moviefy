@@ -20,7 +20,7 @@ import com.pp.moviefy.data.remote.common.model.ApiSpokenLanguage
 import com.pp.moviefy.domain.model.SpokenLanguage
 import javax.inject.Inject
 
-class ApiSpokenLanguageMapper @Inject constructor(): ApiMapper<ApiSpokenLanguage, SpokenLanguage> {
+class ApiSpokenLanguageMapper @Inject constructor() : ApiMapper<ApiSpokenLanguage, SpokenLanguage> {
     override fun mapToDomain(obj: ApiSpokenLanguage): SpokenLanguage {
         return SpokenLanguage(
             englishName = obj.englishName ?: "",

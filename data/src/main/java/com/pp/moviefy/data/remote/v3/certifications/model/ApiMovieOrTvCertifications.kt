@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.v3.certifications.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiMovieOrTvCertifications(
     @field:Json(name = "certifications")
@@ -31,7 +29,6 @@ data class ApiMovieOrTvCertifications(
     @field:Json(name = "error_message")
     val errorMessage: String?
 )
-
 
 data class ApiMovieOrTvCertificationsByCountry(
     @field:Json(name = "AR")
@@ -127,7 +124,6 @@ data class ApiMovieOrTvCertificationsByCountry(
     @field:Json(name = "ZA")
     val zA: ApiMovieOrTvCertification?
 )
-
 
 data class ApiMovieOrTvCertification(
     @field:Json(name = "certification")

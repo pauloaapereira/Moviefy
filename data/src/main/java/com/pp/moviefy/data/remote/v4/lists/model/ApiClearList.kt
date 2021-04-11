@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.v4.lists.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiClearList(
     @field:Json(name = "id")

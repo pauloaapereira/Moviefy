@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.common.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiWatchProviders(
     @field:Json(name = "id")
@@ -32,7 +30,6 @@ data class ApiWatchProviders(
     @field:Json(name = "error_message")
     val errorMessage: String?
 )
-
 
 data class ApiWatchProviderCountries(
     @field:Json(name = "AR")
@@ -129,7 +126,6 @@ data class ApiWatchProviderCountries(
     val zA: ApiCountryWatchProviders?
 )
 
-
 data class ApiCountryWatchProviders(
     @field:Json(name = "buy")
     val buy: List<ApiWatchProvider>?,
@@ -140,7 +136,6 @@ data class ApiCountryWatchProviders(
     @field:Json(name = "rent")
     val rent: List<ApiWatchProvider>?
 )
-
 
 data class ApiWatchProvider(
     @field:Json(name = "display_priority")

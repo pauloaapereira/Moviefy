@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.v4.auth.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiLogout(
     @field:Json(name = "error_message")

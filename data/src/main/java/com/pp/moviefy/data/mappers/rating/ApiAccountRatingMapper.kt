@@ -20,7 +20,7 @@ import com.pp.moviefy.data.remote.common.model.ApiAccountRating
 import com.pp.moviefy.domain.model.AccountRating
 import javax.inject.Inject
 
-class ApiAccountRatingMapper @Inject constructor(): ApiMapper<ApiAccountRating?, AccountRating> {
+class ApiAccountRatingMapper @Inject constructor() : ApiMapper<ApiAccountRating?, AccountRating> {
 
     override fun mapToDomain(obj: ApiAccountRating?): AccountRating {
         return AccountRating(

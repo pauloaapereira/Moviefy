@@ -16,8 +16,6 @@
 package com.pp.moviefy.data.remote.v3.movies.model
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiMovieReleaseDates(
     @field:Json(name = "id")
@@ -34,14 +32,12 @@ data class ApiMovieReleaseDates(
     val errorMessage: String?
 )
 
-
 data class ApiReleaseDatesByCountry(
     @field:Json(name = "iso_3166_1")
     val country: String?,
     @field:Json(name = "release_dates")
     val releaseDates: List<ApiReleaseDate>?
 )
-
 
 data class ApiReleaseDate(
     @field:Json(name = "certification")

@@ -17,8 +17,6 @@ package com.pp.moviefy.data.remote.v3.collections.model
 
 import com.pp.moviefy.data.remote.common.model.ApiMovie
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiCollection(
     @field:Json(name = "backdrop_path")

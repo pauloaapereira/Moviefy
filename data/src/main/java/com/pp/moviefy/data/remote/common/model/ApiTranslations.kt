@@ -15,8 +15,6 @@
  */
 package com.pp.moviefy.data.remote.common.model
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
-
 
 data class ApiTranslations(
     @field:Json(name = "id")
@@ -33,7 +31,6 @@ data class ApiTranslations(
     val errorMessage: String?
 )
 
-
 data class ApiTranslationData(
     @field:Json(name = "data")
     val translation: ApiTranslation?,
@@ -46,7 +43,6 @@ data class ApiTranslationData(
     @field:Json(name = "name")
     val name: String?
 )
-
 
 data class ApiTranslation(
     @field:Json(name = "homepage")
