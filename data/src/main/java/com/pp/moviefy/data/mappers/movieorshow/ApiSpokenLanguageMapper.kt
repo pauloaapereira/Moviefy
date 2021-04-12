@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiSpokenLanguage
+import com.pp.moviefy.data.remote.model.common.ApiSpokenLanguage
 import com.pp.moviefy.domain.model.SpokenLanguage
 import javax.inject.Inject
 

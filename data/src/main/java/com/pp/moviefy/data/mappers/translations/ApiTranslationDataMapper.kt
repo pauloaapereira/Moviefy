@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.translations
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiTranslationData
+import com.pp.moviefy.data.remote.model.common.ApiTranslationData
 import com.pp.moviefy.domain.model.TranslationData
 import javax.inject.Inject
 

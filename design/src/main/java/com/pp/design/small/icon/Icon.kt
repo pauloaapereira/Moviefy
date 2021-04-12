@@ -21,6 +21,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -31,13 +32,14 @@ object Icon {
 
     @Composable
     fun Primary(
+        modifier: Modifier = Modifier,
         @DrawableRes iconRes: Int?,
         contentDescription: String? = null,
         iconSize: Dp = 24.dp,
         isVisible: Boolean = true
     ) {
         iconRes?.let {
-            Box(modifier = Modifier.toggleVisibility(isVisible, visibleSize = iconSize)) {
+            Box(modifier = modifier.toggleVisibility(isVisible, visibleSize = iconSize)) {
                 Icon(
                     painter = painterResource(id = iconRes),
                     contentDescription = contentDescription,
@@ -49,6 +51,7 @@ object Icon {
 
     @Composable
     fun Button(
+        modifier: Modifier = Modifier,
         @DrawableRes iconRes: Int?,
         contentDescription: String? = null,
         iconSize: Dp = 24.dp,
@@ -56,7 +59,7 @@ object Icon {
         onClick: () -> Unit = {}
     ) {
         iconRes?.let {
-            Box(modifier = Modifier.toggleVisibility(isVisible, visibleSize = iconSize)) {
+            Box(modifier = modifier.toggleVisibility(isVisible, visibleSize = iconSize)) {
                 IconButton(onClick = { onClick() }) {
                     Icon(
                         painter = painterResource(id = iconRes),
@@ -64,6 +67,26 @@ object Icon {
                         tint = LocalBaseContentColor.current
                     )
                 }
+            }
+        }
+    }
+
+    @Composable
+    fun Button(
+        modifier: Modifier = Modifier,
+        icon: ImageVector,
+        contentDescription: String? = null,
+        iconSize: Dp = 24.dp,
+        isVisible: Boolean = true,
+        onClick: () -> Unit = {}
+    ) {
+        Box(modifier = modifier.toggleVisibility(isVisible, visibleSize = iconSize)) {
+            IconButton(onClick = { onClick() }) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = contentDescription,
+                    tint = LocalBaseContentColor.current
+                )
             }
         }
     }

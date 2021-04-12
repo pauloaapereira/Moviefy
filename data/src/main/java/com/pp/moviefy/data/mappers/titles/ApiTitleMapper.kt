@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.titles
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiTitle
+import com.pp.moviefy.data.remote.model.common.ApiTitle
 import com.pp.moviefy.domain.model.Title
 import javax.inject.Inject
 

@@ -15,7 +15,7 @@
  */
 package com.pp.moviefy.data.mappers
 
-import com.pp.moviefy.data.remote.common.model.ApiPagedResponse
+import com.pp.moviefy.data.remote.model.common.ApiPagedResponse
 import com.pp.moviefy.domain.model.PagedResponse
 import javax.inject.Inject
 

@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiGenre
+import com.pp.moviefy.data.remote.model.common.ApiGenre
 import com.pp.moviefy.domain.model.Genre
 import javax.inject.Inject
 

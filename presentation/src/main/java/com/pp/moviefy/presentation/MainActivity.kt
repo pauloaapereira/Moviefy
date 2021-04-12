@@ -18,20 +18,12 @@ package com.pp.moviefy.presentation
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltNavGraphViewModel
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.navigate
-import androidx.navigation.compose.rememberNavController
+import com.pp.design.background.Background
+import com.pp.design.background.rememberBackgroundState
 import com.pp.design.core.theme.ComposifyTheme
-import com.pp.moviefy.presentation.auth.AuthScreen
-import com.pp.moviefy.presentation.auth.AuthViewModel
-import com.pp.moviefy.presentation.navigation.NavigationDirections
-import com.pp.moviefy.presentation.navigation.NavigationManager
+import com.pp.moviefy.presentation.navigation.NavGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,24 +40,10 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun App() {
-    val navController = rememberNavController()
-
-    NavigationManager.command.collectAsState().value.also { command ->
-        if (command.destination.isNotEmpty()) {
-            navController.navigate(command.destination)
-        }
-    }
-
-    NavHost(
-        navController,
-        startDestination = NavigationDirections.Authentication.destination
-    ) {
-        composable(NavigationDirections.Authentication.destination) { backStackEntry ->
-            val viewModel = hiltNavGraphViewModel<AuthViewModel>(backStackEntry = backStackEntry)
-            AuthScreen(viewModel = viewModel)
-        }
-        composable(NavigationDirections.Home.destination) {
-            Text(text = "hola home")
+    val backgroundState = rememberBackgroundState()
+    Background(state = backgroundState) {
+        NavGraph { backgroundColor ->
+            backgroundState.baseColor = backgroundColor
         }
     }
 }

@@ -15,16 +15,19 @@
  */
 package com.pp.moviefy.presentation.navigation
 
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NamedNavArgument
 
 interface NavigationCommand {
     val arguments: List<NamedNavArgument>
     val destination: String
+    val backgroundColor: Color
 
     companion object {
         val Default = object : NavigationCommand {
             override val arguments = emptyList<NamedNavArgument>()
             override val destination = ""
+            override val backgroundColor = Color.Black
         }
     }
 }

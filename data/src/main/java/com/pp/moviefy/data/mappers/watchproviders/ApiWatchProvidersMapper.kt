@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.watchproviders
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiWatchProviders
+import com.pp.moviefy.data.remote.model.common.ApiWatchProviders
 import com.pp.moviefy.domain.model.WatchProviders
 import javax.inject.Inject
 

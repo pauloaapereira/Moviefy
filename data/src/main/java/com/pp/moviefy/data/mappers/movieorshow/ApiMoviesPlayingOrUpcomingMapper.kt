@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.v3.movies.model.ApiMoviesPlayingOrUpcoming
+import com.pp.moviefy.data.remote.movies.model.ApiMoviesPlayingOrUpcoming
 import com.pp.moviefy.domain.model.MoviesPlayingOrUpcoming
 import javax.inject.Inject
 

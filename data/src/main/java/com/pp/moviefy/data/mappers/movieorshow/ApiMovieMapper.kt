@@ -17,7 +17,7 @@ package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
 import com.pp.moviefy.data.mappers.rating.ApiAccountRatingMapper
-import com.pp.moviefy.data.remote.common.model.ApiMovie
+import com.pp.moviefy.data.remote.model.common.ApiMovie
 import com.pp.moviefy.data.utils.DateTimeUtils
 import com.pp.moviefy.domain.model.Movie
 import javax.inject.Inject

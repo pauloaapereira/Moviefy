@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiProductionCompany
+import com.pp.moviefy.data.remote.model.common.ApiProductionCompany
 import com.pp.moviefy.domain.model.ProductionCompany
 import javax.inject.Inject
 

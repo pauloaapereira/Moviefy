@@ -16,13 +16,13 @@
 package com.pp.moviefy.data.repositories
 
 import com.pp.moviefy.data.ApiConstants
+import com.pp.moviefy.data.exceptions.ApiException
 import com.pp.moviefy.data.mappers.auth.AccessTokenMapper
 import com.pp.moviefy.data.mappers.auth.RequestTokenMapper
-import com.pp.moviefy.data.remote.exceptions.ApiException
-import com.pp.moviefy.data.remote.v4.auth.api.AuthDao
-import com.pp.moviefy.data.remote.v4.auth.model.AuthorizeBody
-import com.pp.moviefy.data.remote.v4.auth.model.LoginBody
-import com.pp.moviefy.data.remote.v4.auth.model.LogoutBody
+import com.pp.moviefy.data.remote.auth.api.AuthDao
+import com.pp.moviefy.data.remote.auth.model.AuthorizeBody
+import com.pp.moviefy.data.remote.auth.model.LoginBody
+import com.pp.moviefy.data.remote.auth.model.LogoutBody
 import com.pp.moviefy.domain.base.Result
 import com.pp.moviefy.domain.model.auth.AccessToken
 import com.pp.moviefy.domain.model.auth.RequestToken

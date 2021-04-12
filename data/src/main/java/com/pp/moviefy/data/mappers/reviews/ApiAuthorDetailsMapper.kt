@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.reviews
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiAuthorDetails
+import com.pp.moviefy.data.remote.model.common.ApiAuthorDetails
 import com.pp.moviefy.domain.model.AuthorDetails
 import javax.inject.Inject
 

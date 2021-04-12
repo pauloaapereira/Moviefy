@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.images
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiImageList
+import com.pp.moviefy.data.remote.model.common.ApiImageList
 import com.pp.moviefy.domain.model.Images
 import javax.inject.Inject
 

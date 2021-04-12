@@ -15,6 +15,7 @@
  */
 package com.pp.moviefy.data.repositories
 
+import com.pp.moviefy.data.exceptions.ApiException
 import com.pp.moviefy.data.mappers.ApiPagedResponseMapper
 import com.pp.moviefy.data.mappers.credits.ApiCreditsMapper
 import com.pp.moviefy.data.mappers.images.ApiImagesMapper
@@ -26,10 +27,9 @@ import com.pp.moviefy.data.mappers.reviews.ApiReviewsMapper
 import com.pp.moviefy.data.mappers.titles.ApiTitlesMapper
 import com.pp.moviefy.data.mappers.translations.ApiTranslationsMapper
 import com.pp.moviefy.data.mappers.watchproviders.ApiWatchProvidersMapper
-import com.pp.moviefy.data.remote.common.model.ApiMovie
-import com.pp.moviefy.data.remote.common.model.RateBody
-import com.pp.moviefy.data.remote.exceptions.ApiException
-import com.pp.moviefy.data.remote.v3.movies.api.MoviesDao
+import com.pp.moviefy.data.remote.model.common.ApiMovie
+import com.pp.moviefy.data.remote.model.common.RateBody
+import com.pp.moviefy.data.remote.movies.api.MoviesDao
 import com.pp.moviefy.domain.base.Result
 import com.pp.moviefy.domain.model.Credits
 import com.pp.moviefy.domain.model.Images

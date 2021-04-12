@@ -15,6 +15,7 @@
  */
 package com.pp.moviefy.presentation.navigation
 
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NamedNavArgument
 
 object NavigationDirections {
@@ -23,11 +24,15 @@ object NavigationDirections {
         override val arguments = emptyList<NamedNavArgument>()
 
         override val destination: String = "authentication"
+
+        override val backgroundColor: Color = Color(0xFFd7d4c6)
     }
 
     val Home = object : NavigationCommand {
         override val arguments = emptyList<NamedNavArgument>()
 
         override val destination: String = "home"
+
+        override val backgroundColor: Color = Color(0xFF282b39)
     }
 }

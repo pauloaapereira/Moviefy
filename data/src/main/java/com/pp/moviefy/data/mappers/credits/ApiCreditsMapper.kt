@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.credits
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiCredits
+import com.pp.moviefy.data.remote.model.common.ApiCredits
 import com.pp.moviefy.domain.model.Credits
 import javax.inject.Inject
 

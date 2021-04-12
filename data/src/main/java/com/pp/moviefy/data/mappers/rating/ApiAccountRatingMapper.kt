@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.rating
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiAccountRating
+import com.pp.moviefy.data.remote.model.common.ApiAccountRating
 import com.pp.moviefy.domain.model.AccountRating
 import javax.inject.Inject
 

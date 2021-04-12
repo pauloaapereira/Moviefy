@@ -16,16 +16,15 @@
 package com.pp.design.small.text.autocomplete
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
+import com.pp.design.utils.SurfaceBorder
+import com.pp.design.utils.SurfaceShape
 
 private typealias ItemSelected<T> = (T) -> Unit
 
@@ -58,8 +57,8 @@ class AutoCompleteState<T : AutoCompleteEntity>(private val startItems: List<T>)
     override var boxWidthPercentage by mutableStateOf(.9f)
     override var shouldWrapContentHeight by mutableStateOf(false)
     override var boxMaxHeight: Dp by mutableStateOf(TextFieldDefaults.MinHeight * 3)
-    override var boxBorderStroke by mutableStateOf(BorderStroke(2.dp, Color.Black))
-    override var boxShape: Shape by mutableStateOf(RoundedCornerShape(8.dp))
+    override var boxBorderStroke by mutableStateOf(SurfaceBorder)
+    override var boxShape: Shape by mutableStateOf(SurfaceShape)
 
     override fun filter(query: String) {
         filteredItems = startItems.filter { entity ->

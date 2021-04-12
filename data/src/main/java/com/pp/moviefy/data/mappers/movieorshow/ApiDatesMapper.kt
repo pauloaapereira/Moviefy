@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.movieorshow
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.v3.movies.model.ApiDates
+import com.pp.moviefy.data.remote.movies.model.ApiDates
 import com.pp.moviefy.data.utils.DateTimeUtils
 import com.pp.moviefy.domain.model.Dates
 import javax.inject.Inject

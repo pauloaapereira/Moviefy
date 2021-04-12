@@ -16,7 +16,7 @@
 package com.pp.moviefy.data.mappers.credits
 
 import com.pp.moviefy.data.mappers.ApiMapper
-import com.pp.moviefy.data.remote.common.model.ApiCrew
+import com.pp.moviefy.data.remote.model.common.ApiCrew
 import com.pp.moviefy.domain.model.Crew
 import javax.inject.Inject
 
