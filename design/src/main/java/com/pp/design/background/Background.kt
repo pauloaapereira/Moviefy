@@ -32,7 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.pp.design.core.animation.MinAnimationDuration
+import com.pp.design.core.animation.MaxAnimationDuration
 import com.pp.design.utils.generateGradientFeel
 import com.pp.design.utils.getContentColor
 
@@ -62,7 +62,7 @@ fun Background(
 ) {
     val backgroundColorFeel by animateColorAsState(
         targetValue = state.baseColor,
-        animationSpec = tween(MinAnimationDuration)
+        animationSpec = tween(MaxAnimationDuration)
     )
 
     CompositionLocalProvider(

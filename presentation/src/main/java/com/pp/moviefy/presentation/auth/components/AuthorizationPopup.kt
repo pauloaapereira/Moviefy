@@ -30,10 +30,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.pp.moviefy.presentation.auth.state.AuthViewState
-import com.pp.moviefy.presentation.auth.state.AuthViewStatus.REQUESTING_AUTHORIZATION
+import com.pp.moviefy.presentation.R
 import com.pp.moviefy.presentation.components.MoviefyPopup
 import com.pp.moviefy.presentation.utils.AUTHORIZATION_ENDPOINT
 import com.pp.moviefy.presentation.utils.AUTHORIZED_REDIRECTION
@@ -41,16 +41,17 @@ import com.pp.moviefy.presentation.utils.AUTHORIZED_REDIRECTION
 @SuppressLint("SetJavaScriptEnabled")
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun RequestAuthorization(
-    state: AuthViewState,
+internal fun AuthorizationPopup(
+    isVisible: Boolean,
+    requestToken: String,
     onSuccess: () -> Unit,
     onDismiss: () -> Unit
 ) {
     var isPageLoaded by remember { mutableStateOf(false) }
 
     MoviefyPopup(
-        isVisible = state.requestToken.isNotEmpty() && state.viewStatus == REQUESTING_AUTHORIZATION,
-        title = "Authorize your account",
+        isVisible = isVisible,
+        title = stringResource(R.string.auth_authorize_account),
         onDismiss = onDismiss
     ) {
         if (!isPageLoaded) {
@@ -59,7 +60,7 @@ fun RequestAuthorization(
         AndroidView(
             factory = {
                 WebView(it).apply {
-                    loadUrl(AUTHORIZATION_ENDPOINT + state.requestToken)
+                    loadUrl(AUTHORIZATION_ENDPOINT + requestToken)
 
                     settings.javaScriptEnabled = true
                     webViewClient = object : WebViewClient() {
@@ -88,6 +89,10 @@ fun RequestAuthorization(
                         }
                     }
                 }
+            },
+            update = { webView ->
+                if (isVisible)
+                    webView.loadUrl(AUTHORIZATION_ENDPOINT + requestToken)
             }
         )
     }

@@ -17,5 +17,6 @@ package com.pp.moviefy.presentation.auth.events
 
 sealed class AuthViewEvent {
     object RequestAuthorization : AuthViewEvent()
+    object DismissAuthorizationRequest : AuthViewEvent()
     data class Login(val requestToken: String) : AuthViewEvent()
 }

@@ -25,7 +25,11 @@ data class AuthViewState(
 enum class AuthViewStatus {
     IDLE,
     ERROR,
-    LOADING,
     REQUESTING_AUTHORIZATION,
-    LOGGED_IN
+    SUCCESSFULLY_LOGGED_IN,
+    ADVANCING
 }
+
+const val StateTransitionDuration = 2500L
+const val LoggedInTransitionDuration = 2500
+const val LoggedInTransitionDelay = 1000

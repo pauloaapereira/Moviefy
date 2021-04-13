@@ -27,9 +27,9 @@ import androidx.compose.ui.unit.Dp
 import com.pp.design.core.animation.MinAnimationDuration
 
 @Composable
-fun Transition<Boolean>.animateFloatByBoolean(duration: Int = MinAnimationDuration / 2, onTrue: Float, onFalse: Float, label: String = ""): State<Float> {
+fun Transition<Boolean>.animateFloatByBoolean(duration: Int = MinAnimationDuration / 2, delay: Int = 0, onTrue: Float, onFalse: Float, label: String = ""): State<Float> {
     return animateFloat(
-        transitionSpec = { tween(durationMillis = duration) },
+        transitionSpec = { tween(durationMillis = duration, delayMillis = delay) },
         label = label
     ) { state ->
         when (state) {
@@ -39,9 +39,9 @@ fun Transition<Boolean>.animateFloatByBoolean(duration: Int = MinAnimationDurati
     }
 }
 @Composable
-fun Transition<Boolean>.animateColorByBoolean(duration: Int = MinAnimationDuration / 2, onTrue: Color, onFalse: Color, label: String = ""): State<Color> {
+fun Transition<Boolean>.animateColorByBoolean(duration: Int = MinAnimationDuration / 2, delay: Int = 0, onTrue: Color, onFalse: Color, label: String = ""): State<Color> {
     return animateColor(
-        transitionSpec = { tween(durationMillis = duration) },
+        transitionSpec = { tween(durationMillis = duration, delayMillis = delay) },
         label = label
     ) { state ->
         when (state) {
@@ -52,9 +52,9 @@ fun Transition<Boolean>.animateColorByBoolean(duration: Int = MinAnimationDurati
 }
 
 @Composable
-fun Transition<Boolean>.animateDpByBoolean(duration: Int = MinAnimationDuration / 2, onTrue: Dp, onFalse: Dp, label: String = ""): State<Dp> {
+fun Transition<Boolean>.animateDpByBoolean(duration: Int = MinAnimationDuration / 2, delay: Int = 0, onTrue: Dp, onFalse: Dp, label: String = ""): State<Dp> {
     return animateDp(
-        transitionSpec = { tween(durationMillis = duration) },
+        transitionSpec = { tween(durationMillis = duration, delayMillis = delay) },
         label = label
     ) { state ->
         when (state) {

@@ -21,7 +21,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -35,8 +34,6 @@ const val VisibleRotation = 0f
 const val InvisibleRotation = -180f
 
 val InvisibleSize = 0.dp
-
-val ScrimColor = Color.Black.copy(alpha = .1f)
 
 fun Modifier.toggleVisibility(isVisible: Boolean, visibleSize: Dp): Modifier = composed {
     val visibilityTransition =

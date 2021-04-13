@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Moviefy</string>
     <string name="close_popup">Close %1s popup</string>
+    <string name="auth_authorize_account">Authorize your account</string>
+    <string name="auth_enter_as_user">Enter as User</string>
+    <string name="auth_enter_as_guest">Enter as Guest</string>
 </resources>
